@@ -1,0 +1,47 @@
+{
+  "name": "fm-easybank",
+  "version": "1.0.0",
+  "description": "landing page for easybank (frontend mentor challenge)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "parcel ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSterczewski/fm-easybank.git"
+  },
+  "keywords": [
+    "easybank",
+    "landing",
+    "page",
+    "frontend",
+    "mentor"
+  ],
+  "author": "sterczewski.dev@protonmail.ch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSterczewski/fm-easybank/issues"
+  },
+  "homepage": "https://github.com/GSterczewski/fm-easybank#readme",
+  "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "postcss-import": "^13.0.0",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^2.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-purgecss": "^3.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.1.10"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.10"
+  }
+}
