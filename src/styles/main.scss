@@ -1,0 +1,240 @@
+@import "reset";
+@import "typography";
+@import "colors";
+@import "utils";
+
+$tablet-breakpoint: 1070px;
+
+@mixin fluid-list($basis) {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  & > li {
+    flex: 0 1 $basis;
+    // TODO : assign padding to some variable and change it to some normalized value across the page
+    padding: 10px;
+    margin-bottom: $gap-m;
+  }
+  @media (max-width: $tablet-breakpoint) {
+    justify-content: space-around;
+    & > li {
+      text-align: center;
+    }
+  }
+}
+
+.fluid-list {
+  @include fluid-list(300px);
+}
+.fluid-text {
+  @media (max-width: $tablet-breakpoint) {
+    text-align: center;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  padding: 1.5vmax $horizontal-padding;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color-white;
+  @media (max-width: $tablet-breakpoint) {
+    padding-top: 3vmax;
+    padding-bottom: 3vmax;
+  }
+}
+
+.navigation {
+  //font-size: 0.9rem;
+  color: $color-gray;
+  width: 70%;
+  & > ul {
+    width: 50%;
+  }
+  @media (max-width: $tablet-breakpoint) {
+    display: none;
+  }
+}
+
+.navigation-anchor {
+  position: relative;
+  padding: 10px 0;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color-primary-green;
+    transition: width 0.25s ease-in;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+.call-to-action {
+  width: max-content;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  color: $color-white;
+  background: $color-primary-green;
+  background: $gradient;
+  &:visited {
+    color: $color-white;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.section {
+  padding: $section-padding $section-padding $section-padding/3;
+
+  //height: 85vh;
+}
+
+/*------------------- HERO SECTION   --------------------*/
+
+.hero-section {
+  height: 700px;
+  padding: 0;
+  background-color: $color-gray-lighter;
+  display: flex;
+}
+.hero-section-content {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 0 $section-padding;
+}
+.hero-section-img-container {
+  flex-grow: 1;
+  height: 100%;
+  background-image: url("assets/images/bg-desktop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top 50% right -100px;
+  position: relative;
+}
+.hero-section-img {
+  position: absolute;
+  top: -5%;
+  left: 75%;
+  width: 700px;
+  transform: translate(-50%);
+}
+
+@media (max-width: 1200px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    height: 150vmax;
+
+    &-img-container {
+      //background-position: top 80% right -200px;
+    }
+    &-img {
+      left: 50%;
+      width: 55%;
+    }
+  }
+}
+
+/*------------------- WHY SECTION   --------------------*/
+
+.why-section {
+  background-color: $color-gray-light;
+  & > p {
+    max-width: 700px;
+    margin-bottom: $gap-xl;
+    @media (max-width: $tablet-breakpoint) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.articles-section {
+  background-color: $color-gray-lighter;
+}
+
+.articles {
+  @include fluid-list(300px);
+}
+
+.article {
+  $inner-space: 12px 20px;
+  border-radius: 10px;
+  background-color: $color-white;
+  overflow: hidden;
+
+  &-img {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/*------------------- FOOTER SECTION   --------------------*/
+
+.footer {
+  $gap: 12px;
+  padding: $section-padding/3 $section-padding;
+  background-color: $color-primary-blue;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  min-height: 12vmax;
+  &-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-list {
+    height: 100%;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $color-gray;
+  }
+  &-link {
+    fill: $color-white;
+    &:hover {
+      color: $color-primary-green;
+      fill: $color-primary-green;
+    }
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    &-group > * {
+      margin-bottom: $gap;
+    }
+    &-list {
+      align-items: center;
+    }
+  }
+}
+
+.socials {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
