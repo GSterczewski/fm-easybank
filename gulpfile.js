@@ -41,7 +41,7 @@ const handleHTML = () => src(appendExtension(config.paths.src.root,extensions.ht
 
 const handleStyles = () => src(appendExtension(config.paths.src.styles))
 .pipe(sass().on('error',sass.logError))
-.pipe(concat({path: config.options.bundles.css}))
+//.pipe(concat({path: config.options.bundles.css}))
 .pipe(dest(config.paths.dist.root))
 
 const handleJS = () => src(appendExtension(config.paths.src.js, extensions.js))
