@@ -98,6 +98,30 @@ p,
   .u-flex--wrap {
     flex-wrap: wrap; }
 
+.hamburger-menu {
+  border: none;
+  padding: 8px 5px;
+  background-color: white;
+  outline: none;
+  cursor: pointer; }
+  .hamburger-menu__bar {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s; }
+    .hamburger-menu__bar:not(:last-child) {
+      margin-bottom: 3px; }
+
+.hamburger-menu--open .hamburger-menu__bar--top {
+  transform: rotate(45deg) translate(3px, 4px); }
+
+.hamburger-menu--open .hamburger-menu__bar--middle {
+  opacity: 0; }
+
+.hamburger-menu--open .hamburger-menu__bar--bottom {
+  transform: rotate(-45deg) translate(3px, -4px); }
+
 .fluid-list {
   display: flex;
   justify-content: space-between;
