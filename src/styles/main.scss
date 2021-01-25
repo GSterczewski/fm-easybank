@@ -4,8 +4,11 @@
 @import "utils";
 
 $tablet-breakpoint: 1070px;
+<<<<<<< HEAD
 $formula: 1600 - 1615;
 $value: #{$formula}vw;
+=======
+>>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 
 @mixin fluid-list($basis) {
   display: flex;
@@ -106,12 +109,21 @@ header {
 
 .section {
   padding: $section-padding $section-padding $section-padding/3;
+<<<<<<< HEAD
+=======
+
+  //height: 85vh;
+>>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 }
 
 /*------------------- HERO SECTION   --------------------*/
 
 .hero-section {
+<<<<<<< HEAD
   height: 100vh;
+=======
+  height: 700px;
+>>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
   padding: 0;
   background-color: $color-gray-lighter;
   display: flex;
@@ -122,15 +134,26 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+<<<<<<< HEAD
   padding-left: $section-padding;
+=======
+  padding: 0 0 0 $section-padding;
+>>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 }
 .hero-section-img-container {
   flex-grow: 1;
   height: 100%;
+<<<<<<< HEAD
   background-image: url("assets/images/bg-intro-desktop.svg");
   background-size: 1100px;
   background-repeat: no-repeat;
   background-position: top 80% right -300px;
+=======
+  background-image: url("assets/images/bg-desktop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top 50% right -100px;
+>>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
   position: relative;
 }
 .hero-section-img {
@@ -144,6 +167,7 @@ header {
 @media (max-width: 1200px) {
   .hero-section {
     flex-direction: column-reverse;
+<<<<<<< HEAD
     height: 1200px;
 
     &-img-container {
@@ -196,6 +220,16 @@ header {
 
     &-heading {
       font-size: 1.6rem;
+=======
+    height: 150vmax;
+
+    &-img-container {
+      //background-position: top 80% right -200px;
+    }
+    &-img {
+      left: 50%;
+      width: 55%;
+>>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
     }
   }
 }
