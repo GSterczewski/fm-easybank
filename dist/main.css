@@ -193,8 +193,8 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  z-index: 2;
-  transition: all 0.3s;
+  z-index: -1;
+  transition: all 0.4s;
   background-color: rgba(0, 0, 0, 0.5); }
   .mobile-navigation-list {
     position: absolute;
@@ -208,10 +208,12 @@ body {
     background-color: white;
     padding: 2rem 1rem;
     width: 90%;
-    border-radius: 10px; }
+    border-radius: 10px;
+    transition: opacity 0.5s; }
 
 .mobile-navigation--active {
-  opacity: 1; }
+  opacity: 1;
+  z-index: 2; }
 
 .navigation-anchor {
   position: relative;
