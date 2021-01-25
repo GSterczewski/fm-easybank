@@ -107,40 +107,87 @@ p,
     flex: 0 1 300px;
     padding: 10px;
     margin-bottom: 1.25em; }
-  @media (max-width: 1070px) {
+  @media (max-width: 770px) {
     .fluid-list {
       justify-content: space-around; }
       .fluid-list > li {
         text-align: center; } }
 
-@media (max-width: 1070px) {
+@media (max-width: 770px) {
   .fluid-text {
     text-align: center; } }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
 
-header {
+.no-vertical-overflow {
+  overflow-y: hidden; }
+
+.header {
   padding: 1.5vmax 8vw;
   position: absolute;
   z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white; }
-  @media (max-width: 1070px) {
-    header {
+  background-color: white;
+  display: flex;
+  align-items: center; }
+  .header-menu-button {
+    display: none; }
+  @media (max-width: 770px) {
+    .header {
       padding-top: 3vmax;
-      padding-bottom: 3vmax; } }
+      padding-bottom: 3vmax; }
+      .header-menu-button {
+        display: block; } }
 
 .navigation {
   color: #9698a6;
-  width: 70%; }
-  .navigation > ul {
-    width: 50%; }
-  @media (max-width: 1070px) {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .navigation-list {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0; }
+  @media (max-width: 770px) {
     .navigation {
       display: none; } }
+
+.mobile-navigation {
+  position: fixed;
+  top: 2rem;
+  opacity: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .mobile-navigation-list {
+    position: absolute;
+    top: 5rem;
+    height: 20rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 2rem 1rem;
+    width: 90%;
+    border-radius: 10px; }
+
+.mobile-navigation--active {
+  opacity: 1; }
 
 .navigation-anchor {
   position: relative;
@@ -176,11 +223,7 @@ header {
 
 /*------------------- HERO SECTION   --------------------*/
 .hero-section {
-<<<<<<< HEAD
   height: 100vh;
-=======
-  height: 700px;
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
   padding: 0;
   background-color: #fafafa;
   display: flex; }
@@ -191,26 +234,15 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-<<<<<<< HEAD
   padding-left: 8vw; }
-=======
-  padding: 0 0 0 8vw; }
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 
 .hero-section-img-container {
   flex-grow: 1;
   height: 100%;
-<<<<<<< HEAD
   background-image: url("assets/images/bg-intro-desktop.svg");
   background-size: 1100px;
   background-repeat: no-repeat;
   background-position: top 80% right -300px;
-=======
-  background-image: url("assets/images/bg-desktop.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top 50% right -100px;
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
   position: relative; }
 
 .hero-section-img {
@@ -223,7 +255,6 @@ header {
 @media (max-width: 1200px) {
   .hero-section {
     flex-direction: column-reverse;
-<<<<<<< HEAD
     height: 1200px; }
     .hero-section-img-container {
       height: 60%;
@@ -262,12 +293,6 @@ header {
     height: 900px; }
     .hero-section-heading {
       font-size: 1.6rem; } }
-=======
-    height: 150vmax; }
-    .hero-section-img {
-      left: 50%;
-      width: 55%; } }
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 
 /*------------------- WHY SECTION   --------------------*/
 .why-section {
@@ -275,7 +300,7 @@ header {
   .why-section > p {
     max-width: 700px;
     margin-bottom: 3.25em; }
-    @media (max-width: 1070px) {
+    @media (max-width: 770px) {
       .why-section > p {
         margin-left: auto;
         margin-right: auto; } }
@@ -292,7 +317,7 @@ header {
     flex: 0 1 300px;
     padding: 10px;
     margin-bottom: 1.25em; }
-  @media (max-width: 1070px) {
+  @media (max-width: 770px) {
     .articles {
       justify-content: space-around; }
       .articles > li {

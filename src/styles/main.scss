@@ -3,12 +3,11 @@
 @import "colors";
 @import "utils";
 
-$tablet-breakpoint: 1070px;
-<<<<<<< HEAD
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 770px;
+
 $formula: 1600 - 1615;
 $value: #{$formula}vw;
-=======
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 
 @mixin fluid-list($basis) {
   display: flex;
@@ -17,7 +16,7 @@ $value: #{$formula}vw;
   width: 100%;
   & > li {
     flex: 0 1 $basis;
-    // TODO : assign padding to some variable and change it to some normalized value across the page
+
     padding: 10px;
     margin-bottom: $gap-m;
   }
@@ -40,9 +39,13 @@ $value: #{$formula}vw;
 
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
-header {
+.no-vertical-overflow {
+  overflow-y: hidden;
+}
+.header {
   padding: 1.5vmax $horizontal-padding;
   position: absolute;
   z-index: 3;
@@ -50,24 +53,69 @@ header {
   left: 0;
   width: 100%;
   background-color: $color-white;
+  display: flex;
+  align-items: center;
+  &-menu-button {
+    display: none;
+  }
   @media (max-width: $tablet-breakpoint) {
     padding-top: 3vmax;
     padding-bottom: 3vmax;
+    &-menu-button {
+      display: block;
+    }
   }
 }
 
 .navigation {
-  //font-size: 0.9rem;
   color: $color-gray;
   width: 70%;
-  & > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-list {
     width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0;
   }
   @media (max-width: $tablet-breakpoint) {
     display: none;
   }
 }
-
+.mobile-navigation {
+  position: fixed;
+  top: 2rem;
+  opacity: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
+  &-list {
+    position: absolute;
+    top: 5rem;
+    height: 20rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 2rem 1rem;
+    width: 90%;
+    border-radius: 10px;
+  }
+}
+.mobile-navigation--active {
+  opacity: 1;
+}
 .navigation-anchor {
   position: relative;
   padding: 10px 0;
@@ -109,21 +157,12 @@ header {
 
 .section {
   padding: $section-padding $section-padding $section-padding/3;
-<<<<<<< HEAD
-=======
-
-  //height: 85vh;
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 }
 
 /*------------------- HERO SECTION   --------------------*/
 
 .hero-section {
-<<<<<<< HEAD
   height: 100vh;
-=======
-  height: 700px;
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
   padding: 0;
   background-color: $color-gray-lighter;
   display: flex;
@@ -134,26 +173,15 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-<<<<<<< HEAD
   padding-left: $section-padding;
-=======
-  padding: 0 0 0 $section-padding;
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
 }
 .hero-section-img-container {
   flex-grow: 1;
   height: 100%;
-<<<<<<< HEAD
   background-image: url("assets/images/bg-intro-desktop.svg");
   background-size: 1100px;
   background-repeat: no-repeat;
   background-position: top 80% right -300px;
-=======
-  background-image: url("assets/images/bg-desktop.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top 50% right -100px;
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
   position: relative;
 }
 .hero-section-img {
@@ -167,7 +195,6 @@ header {
 @media (max-width: 1200px) {
   .hero-section {
     flex-direction: column-reverse;
-<<<<<<< HEAD
     height: 1200px;
 
     &-img-container {
@@ -220,16 +247,6 @@ header {
 
     &-heading {
       font-size: 1.6rem;
-=======
-    height: 150vmax;
-
-    &-img-container {
-      //background-position: top 80% right -200px;
-    }
-    &-img {
-      left: 50%;
-      width: 55%;
->>>>>>> a4ac1a279c7fdf033b5a192ae5289b6fa7b5e194
     }
   }
 }
