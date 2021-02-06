@@ -241,7 +241,7 @@ body {
   background: linear-gradient(90deg, #31d35c 0%, #2bb7da 77%); }
   .call-to-action:visited {
     color: white; }
-  .call-to-action:hover {
+  .call-to-action:hover, .call-to-action:focus {
     opacity: 0.7; }
 
 .section {
@@ -352,10 +352,14 @@ body {
 .article {
   border-radius: 10px;
   background-color: white;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: box-shadow 0.4s; }
   .article-img {
     width: 100%;
     height: 200px; }
+  .article:hover, .article:focus {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+    cursor: pointer; }
 
 /*------------------- FOOTER SECTION   --------------------*/
 .footer {
@@ -379,7 +383,7 @@ body {
     color: #9698a6; }
   .footer-link {
     fill: white; }
-    .footer-link:hover {
+    .footer-link:hover, .footer-link:focus {
       color: #31d35c;
       fill: #31d35c; }
   @media (max-width: 900px) {
